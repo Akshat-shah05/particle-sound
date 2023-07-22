@@ -1,4 +1,4 @@
-let fft
+let ffft
 
 let Particle = function (position) {
   this.position = position
@@ -24,14 +24,14 @@ function setup() {
   let mic = new p5.AudioIn()
   mic.start()
 
-  fft = new p5.FFT()
-  fft.setInput(mic)
+  ffft = new p5.FFT()
+  ffft.setInput(mic)
 
   positionParticles()
 }
 
 function draw() {
   background(0, 0, 0)
-  let spectrum = fft.analyze()
+  let spectrum = ffft.analyze()
   updateParticles(spectrum)
 }
